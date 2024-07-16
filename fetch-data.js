@@ -6,9 +6,9 @@ async function fetchUserData() {
         const users = await response.json();                     // Convert data from API to json
         dataContainer.innerHTML = "";                            // Clear existing content
         const userList = document.createElement("ul");           // Create the user list
-        users.forEach(element => {                               // populate the user list
+        users.forEach(user => {                               // populate the user list
             const myList = document.createElement("li");
-            myList.textContent = element.name;
+            myList.textContent = user.name;
             userList.append(myList);
         });
         dataContainer.append(userList);                          // Append the user list to the container
